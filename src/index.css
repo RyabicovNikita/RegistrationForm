@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+:root {
+	--disabled-color: #cfcfcf;
+	--error-color: #d40000;
+	--main-color: #cbc5a0;
+}
+* {
+	font-family: 'Permanent Marker';
+}
+#root {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

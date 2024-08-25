@@ -1,0 +1,51 @@
+.app {
+	text-align: center;
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.hidden {
+	display: none;
+}
+
+.custom-input {
+	margin-bottom: 15px;
+}
+.custom-input:focus {
+	outline: white;
+	border-color: white;
+	transition: 0.5s;
+}
+
+.authorization-form {
+	width: 350px;
+	background-color: var(--main-color);
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	box-sizing: border-box;
+	border: 1px solid black;
+	border-radius: 10px;
+	box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.74);
+
+	&__submit-button {
+		background-color: var(--main-color);
+		color: black;
+		
+		border-radius: 7px;
+		margin-top: 20px;
+		cursor: pointer;
+	}
+	&__submit-button:disabled {
+		background-color: rgba(191, 191, 191, 0.749);
+		color: rgb(151, 151, 151);
+	}
+	&__submit-button:hover:not(:disabled) {
+		background-color: black;
+		color: white;
+		transition: 0.5s;
+	}
+}
+
+
