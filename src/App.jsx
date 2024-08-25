@@ -19,14 +19,14 @@ const App = () => {
 	} = useForm({
 		resolver: yupResolver(fieldsSchema),
 	});
-	const { email = null, password = null, repeatPassword = null } = errors;
-	const isErrorExists = () => email || password || repeatPassword;
+	const isErrorExists = (name) => errors[name]?.message;
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className={formClassName}>
 			<InputField parentClassName={formClassName} id="email" name="email" validates={register('email')}>
 				Enter email
 			</InputField>
+			{isErrorExists('email') && <ErrorsList message={errors['email'].message} />}
 			<InputField
 				parentClassName={formClassName}
 				id="password"
@@ -36,6 +36,7 @@ const App = () => {
 			>
 				Enter password
 			</InputField>
+			{isErrorExists('password') && <ErrorsList message={errors['password'].message} />}
 			<InputField
 				parentClassName={formClassName}
 				id="repeat-password"
@@ -45,7 +46,7 @@ const App = () => {
 			>
 				Repeat password
 			</InputField>
-			{isErrorExists && <ErrorsList errors={errors} />}
+			{isErrorExists('repeatPassword') && <ErrorsList message={errors['repeatPassword'].message} />}
 			<button className={mergeClasses([formClassName, 'submit-button'], '__')} disabled={isErrorExists()}>
 				Register
 			</button>
