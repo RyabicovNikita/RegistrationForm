@@ -1,6 +1,9 @@
-.error {
-	padding: 0;
+.errors-list {
 	margin: 0;
-	color: var(--error-color);
+	padding-left: inherit;
+	&__error {
+		color: var(--error-color);
 	font-weight: bold;
+	}
 }
+
